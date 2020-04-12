@@ -102,7 +102,7 @@ function App() {
                 }}
                 className="w-full flex justify-center py-40"
               >
-                <div className="year-nav fixed top-0 left-0 flex flex-col p-16 text-gray-600 z-10">
+                <div className="year-nav fixed top-50 left-0 flex flex-col p-16 text-gray-600 z-10">
                   <div
                     className={`p-5 ${
                       activeYear === "2012" ? "active" : "inactive"
