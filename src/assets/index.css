@@ -1,0 +1,227 @@
+/* .fade-enter {
+  opacity: 0;
+  display: true;
+}
+.fade-enter-active,
+.fade-enter-done {
+  opacity: 1;
+  transition: opacity 700ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  display: true;
+}
+.fade-exit-active,
+.fade-exit-done {
+  opacity: 0;
+  transition: opacity 700ms;
+}
+.fade-exit-done {
+  display: none;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,400;1,500;1,700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap");
+
+@font-face {
+  font-family: "glacialIndifference";
+  src: url("/fonts/glacial-indifference.regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "glacialIndifference";
+  src: url("/fonts/glacial-indifference.bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-ExtraBold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Heavy.otf") format("opentype");
+  font-weight: 900;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-enter-done {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active,
+.fade-exit-done {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+.fade-exit-done {
+  display: none;
+}
+
+.shrinkright-enter {
+  width: 0;
+}
+.shrinkright-enter-active,
+.shrinkright-enter-done {
+  width: 100vw;
+  transition: opacity 300ms linear 150ms;
+}
+.shrinkright-exit {
+  width: 100vw;
+}
+.shrinkright-exit-active,
+.shrinkright-exit-done {
+  width: 100vw;
+  transition: width 150ms linear;
+}
+.shrinkright-exit-done {
+  width: 0;
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav {
+  -webkit-animation: fadein 300ms; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 300ms; /* Firefox < 16 */
+  -ms-animation: fadein 300ms; /* Internet Explorer */
+  -o-animation: fadein 300ms; /* Opera < 12.1 */
+  animation: fadeIn 300ms;
+}
+
+body {
+  /* overflow: hidden; */
+  font-family: "Roboto Mono", monospace;
+}
+
+.main {
+  position: absolute;
+  padding-top: 100px;
+
+  -webkit-animation: fadein 300ms; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 300ms; /* Firefox < 16 */
+  -ms-animation: fadein 300ms; /* Internet Explorer */
+  -o-animation: fadein 300ms; /* Opera < 12.1 */
+  animation: fadeIn 300ms;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.bg-img {
+  /* Center and scale the image nicely */
+  background-image: url("/img/2.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: center right; */
+}
+
+.header {
+  display: flex;
+  height: 100%;
+  color: #2e2f30;
+}
+.header h1 {
+  font-weight: 900;
+  font-family: "Roboto", monospace;
+  font-style: italic;
+}
+.header h2 {
+  font-family: "Roboto", monospace;
+
+  color: #4e6b8d;
+}
+
+.nav-button {
+  min-width: 200px;
+  font-family: "Raleway", sans-serif;
+  transition: all 250ms ease;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+}
+button.nav-button:hover {
+  border: 1px solid #2e2f30;
+  background-color: white;
+  color: #2e2f30;
+}
+
+.main-content {
+  -webkit-animation: fadeIn 800ms ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeIn 800ms ease-in-out; /* Firefox < 16 */
+  -ms-animation: fadeIn 800ms ease-in-out; /* Internet Explorer */
+  -o-animation: fadeIn 800ms ease-in-out; /* Opera < 12.1 */
+  animation: fadeIn 800ms ease-in-out;
+}
+
+img.card {
+  max-height: 500px;
+  max-width: 100%;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+
+.year {
+  min-height: 500px;
+}
+
+.active {
+  color: white;
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+  background-color: rgba(163, 89, 238, 0.493);
+  border-radius: 10px;
+}
+.inactive {
+  color: black;
+  transition: color 500ms ease-in;
+}
